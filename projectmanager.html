@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Project Manager Dashboard</title>
+    <link rel="stylesheet" href="projectmanager.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, red, orange);
+            min-height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>PM Dashboard</h2>
+        <ul>
+            <li class="active" data-target="dashboard">Dashboard</li>
+            <li data-target="projects">Projects</li>
+            <li data-target="tasks">Tasks</li>
+            <li data-target="teams">Teams</li>
+            <li data-target="reports">Reports</li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header>
+            <h1 id="page-header">Dashboard</h1>
+            <button id="addProjectBtn">Add Project</button>
+        </header>
+
+        <div id="dashboard" class="content-section">
+            <!-- Cards -->
+            <section class="cards">
+                <div class="card">
+                    <h3>Total Projects</h3>
+                    <p id="totalProjects">0</p>
+                </div>
+                <div class="card">
+                    <h3>Active</h3>
+                    <p id="activeProjects">0</p>
+                </div>
+                <div class="card">
+                    <h3>Completed</h3>
+                    <p id="completedProjects">0</p>
+                </div>
+            </section>
+
+            <!-- Table -->
+            <section class="table-section">
+                <h2>Project List</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Deadline</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="projectTable">
+                    </tbody>
+                </table>
+            </section>
+        </div>
+
+        <div id="projects" class="content-section" style="display: none;">
+            <h2>Projects</h2>
+            <p>Manage your projects here.</p>
+        </div>
+
+        <div id="tasks" class="content-section" style="display: none;">
+            <h2>Tasks</h2>
+            <p>Manage your tasks here.</p>
+        </div>
+
+        <div id="teams" class="content-section" style="display: none;">
+            <h2>Teams</h2>
+            <p>Manage your teams here.</p>
+        </div>
+
+        <div id="reports" class="content-section" style="display: none;">
+            <h2>Reports</h2>
+            <p>View your reports here.</p>
+        </div>
+
+    </main>
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <h3>Add New Project</h3>
+        <input type="text" id="projectName" placeholder="Project Name">
+        <input type="date" id="projectDate">
+        <select id="projectStatus">
+            <option value="Active">Active</option>
+            <option value="Completed">Completed</option>
+        </select>
+        <button id="saveProject">Save</button>
+        <button id="closeModal">Cancel</button>
+    </div>
+</div>
+
+<script src="projectmanager.js"></script>
+</body>
+</html>
